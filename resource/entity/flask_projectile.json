@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "bw:flask_projectile",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/items/bottles/strange_potion_flask",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.item_sprite"
+      },
+      "animations": {
+        "flying": "animation.actor.billboard"
+      },
+      "scripts": {
+        "animate": [
+          "flying"
+        ]
+      },
+      "render_controllers": [ "controller.render.flask_projectile" ]
+    }
+  }
+}
