@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:guide_rites"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "bw:white_chalk"
+      },
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "bw:rites_book",
+      "count": 1
+    }
+  }
+}

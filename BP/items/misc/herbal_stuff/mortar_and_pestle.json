@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:mortar_and_pestle"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": false,
+			"minecraft:allow_off_hand": false,
+			"minecraft:icon": "mortar_pestle"
+		}
+	}
+}

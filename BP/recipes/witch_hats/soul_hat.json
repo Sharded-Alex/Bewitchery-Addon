@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:soul_hat"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "  #",
+      " # ",
+      "#*#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:white_wool"
+      },
+      "*": {
+        "item": "bw:soul_fragment"
+      }
+    },
+    "result": {
+      "item": "bw:soul_witch_hat"
+    }
+  }
+}

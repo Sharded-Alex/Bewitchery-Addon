@@ -1,0 +1,100 @@
+{
+  "pools": [
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:rabbit_foot",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:honey_orbos",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "bw:amethyst_nugget",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bw:blue_orchid_dust",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:poppy_dust",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:oxeye_daisy_dust",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:dandelion_dust",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:cornflower_dust",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:crushed_fern",
+          "weight": 15
+        },
+        {
+          "type": "item",
+          "name": "minecraft:rotten_flesh",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "minecraft:string",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "bw:ender_imbued_quartz",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bw:earth_imbued_quartz",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bw:lunar_imbued_quartz",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bw:solar_imbued_quartz",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "bw:sky_imbued_quartz",
+          "weight": 5
+        },
+        
+        {
+          "type": "item",
+          "name": "minecraft:phantom_membrane",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ender_pearl",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

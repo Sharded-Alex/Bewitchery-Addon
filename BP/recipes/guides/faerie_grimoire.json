@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:faerie_grimoire_book"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:honeycomb"
+      },
+      {
+        "item": "minecraft:apple"
+      },
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "bw:faerie_grimoire",
+      "count": 1
+    }
+  }
+}

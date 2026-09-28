@@ -1,0 +1,28 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "bw:default_broom",
+			"materials": {
+				"default": "skeleton",
+				"broom_decor": "armor_leather"
+			},
+			"textures": {
+			  "broom": "textures/entity/brooms/normal/normal_broom_wood.png",
+				"decor": "textures/entity/brooms/normal/normal_broom_brush.tga"
+			},
+			"animations": {
+        "idle": "animation.broom.idle"
+      },
+      "scripts": {
+        "animate": [
+          "idle"
+        ]
+      },
+			"geometry": {
+				"default": "geometry.brooms"
+			},
+      "render_controllers": [ "controller.render.oak_broom_solid", "controller.render.oak_broom" ]
+    }
+	}
+}

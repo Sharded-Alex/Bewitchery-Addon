@@ -1,0 +1,43 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:normal_broom_item",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": {
+			  "value": 1
+			},
+			"minecraft:hand_equipped": {
+			  "value": true
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": ["bw:sky_imbued_quartz"],
+						"repair_amount": "context.other->query.remaining_durability + 0.05 * context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:custom_components": ["bw:rideBroom"],
+			"minecraft:durability": {
+			  "damage_chance": {
+			    "min": 0,
+			    "max": 0
+			  },
+			  "max_durability": 500
+			},
+			"minecraft:allow_off_hand": false,
+			"minecraft:icon": {
+        "textures": {
+          "default": "broom_normal",
+          "dyed": "broom_normal_dyed"
+        }
+      },
+      "minecraft:dyeable": {}
+		}
+	}
+}

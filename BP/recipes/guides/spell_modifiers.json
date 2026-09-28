@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:guide_spell_modifiers"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "minecraft:gunpowder"
+      },
+      {
+        "item": "bw:dandelion_dust"
+      },
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "bw:modifiers_spell_book",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:mortar_and_pestle"
+    },
+    "tags": [
+      "crafting_table",
+      "witch_altar"
+    ],
+    "pattern": [
+      "#/#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:cobblestone"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "bw:mortar_and_pestle"
+    }
+  }
+}

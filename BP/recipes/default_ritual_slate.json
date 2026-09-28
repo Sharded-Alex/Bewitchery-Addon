@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:ritual_slate_recipe"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stone",
+        "data": 6
+      }
+    },
+    "result": {
+      "item": "bw:runic_slate",
+      "count": 6
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.oak_broom": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.broom_decor" } ],
+      "textures": [ "Texture.decor" ],
+      "filter_lighting": true,
+      "overlay_color": {
+        "r": "q.property('bw:red_color')",
+        "g": "q.property('bw:green_color')",
+        "b": "q.property('bw:blue_color')",
+        "a": "q.property('bw:red_color') == 1.0 && q.property('bw:green_color') == 1.0 && q.property('bw:blue_color') == 1.0 ? 0.0 : 0.925"
+      }
+    },
+    "controller.render.oak_broom_custom": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.broom_decor" } ],
+      "textures": [ "Texture.decor" ],
+      "filter_lighting": true,
+      "overlay_color": {
+        "r": "q.property('bw:red_color')",
+        "g": "q.property('bw:green_color')",
+        "b": "q.property('bw:blue_color')",
+        "a": 0.275
+      }
+    },
+    "controller.render.oak_broom_solid": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.broom" ],
+      "filter_lighting": true
+    }
+  }
+}

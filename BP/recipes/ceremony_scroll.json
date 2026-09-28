@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:ceremony_scroll_craft"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#W",
+      "A"
+    ],
+    "key": {
+      "#": {
+        "item": "bw:blank_scroll"
+      },
+      "W": {
+        "item": "bw:raw_orbos"
+      },
+      "A": {
+        "item": "bw:natural_ash"
+      }
+    },
+    "result": {
+      "item": "bw:ritual_scroll",
+      "count": 1
+    }
+  }
+}

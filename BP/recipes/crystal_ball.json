@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:crystal_ball_recipe"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#D#",
+      " # ",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:planks"
+      },
+      "D": {
+        "item": "minecraft:glass",
+        "data": 0
+      }
+    },
+    "result":{
+      "item": "bw:crystal_ball"
+    }
+  }
+}

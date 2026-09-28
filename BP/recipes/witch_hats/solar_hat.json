@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:solar_hat"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "  #",
+      " # ",
+      "#*#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:black_wool"
+      },
+      "*": {
+        "item": "bw:solar_imbued_quartz"
+      }
+    },
+    "result": {
+      "item": "bw:solar_witch_hat"
+    }
+  }
+}

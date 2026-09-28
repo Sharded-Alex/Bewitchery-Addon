@@ -1,0 +1,130 @@
+{
+  "format_version": "1.26.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "bw:spell_missile",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"runtime_identifier": "minecraft:snowball",
+			"properties": {
+			  "bw:hates_water": {
+			    "type": "bool",
+			    "default": false,
+			    "client_sync": true
+			  },
+			  "bw:lifetime": {
+			    "type": "int",
+			    "range": [0, 1000],
+			    "default": 0,
+			    "client_sync": true
+			  },
+			  "bw:size": {
+			    "type": "float",
+			    "range": [0.1, 1.1],
+			    "default": 1.1,
+			    "client_sync": true
+			  }
+			}
+    },
+    
+    "component_groups": {
+    },
+    
+    "components": {
+      "minecraft:collision_box": {
+        "height": 0.25,
+        "width": 0.25
+      },
+      
+      "minecraft:projectile": {
+        /*
+        "on_hit": {
+          "impact_damage": {
+            "knockback": false,
+            "destroy_on_hit": false
+          }
+        },
+        */
+        "power": 1.3,
+        "gravity": 0.0,
+        "inertia": 1,
+        "offset": [ 0, 0, 0 ],
+        "uncertainty_base": 0,
+        "liquid_inertia": 1
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {},
+      "minecraft:timer": {
+        "looping": true,
+        "time": [0.1, 0.1],
+        "time_down_event": {
+          "event": "bw:projectile_count_down"
+        }
+      },
+      "minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "bw:kill_self",
+            "filters": {
+              "all_of": [
+                {
+                  "test": "int_property",
+                  "domain": "bw:lifetime",
+                  "operator": "==",
+                  "value": 0
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "spell_bolt"
+        ]
+      },
+      "minecraft:entity_sensor": {
+        "subsensors": [
+          {
+            "event": "bw:projectile_collision",
+            "cooldown": 0,
+            "range": [
+              0.6,
+              0.6
+            ],
+            "minimum_count": 1,
+            "maximum_count": -1,
+            "event_filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "spell_bolt"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    
+    "events": {
+      "bw:projectile_count_down": {
+        "set_property": {
+          "bw:lifetime": "query.property('bw:lifetime') > 0 ? query.property('bw:lifetime') - 1 : 0"
+        }
+      },
+      "bw:projectile_collision": {
+        "queue_command": {
+          "command": "particle minecraft:sonic_explosion ~~~"
+        },
+        "trigger": "bw:kill_self"
+      },
+      "bw:kill_self": {}
+    }
+  }
+}

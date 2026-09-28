@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:guide_adept_ceremonies"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "bw:oxeye_daisy_dust"
+      },
+      {
+        "item": "bw:poppy_dust"
+      },
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "bw:adept_ceremony",
+      "count": 1
+    }
+  }
+}

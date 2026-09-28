@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:wooden_spoon"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      " #",
+      "/"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:planks"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "bw:spoon",
+      "count": 1
+    }
+  }
+}

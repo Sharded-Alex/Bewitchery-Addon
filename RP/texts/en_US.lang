@@ -1,0 +1,120 @@
+bw:dust_group.name=Witch Dusts
+bw:tools_group.name=Witch Tools
+bw:crystal_group.name=Primal Crystals
+bw:guides_group.name=Major Books
+bw:supplementary_group.name=Minor Books
+bw:wands_group.name=Witch Wands
+
+item.bw:spoon=Tasting Spoon
+item.bw:spirit_totem=Familiar Trinket
+
+
+item.bw:earth_imbued_quartz=Earth Crystal
+item.bw:solar_imbued_quartz=Solar Crystal
+item.bw:lunar_imbued_quartz=Lunar Crystal
+item.bw:sky_imbued_quartz=Sky Crystal
+item.bw:ender_imbued_quartz=Ender Crystal
+
+item.bw:red_chalk=Red Chalk Dust
+item.bw:white_chalk=White Chalk Dust
+
+item.bw:soul_fragment=Soul Fragment
+item.bw:blood_vial=Bottle O' Blood
+item.bw:glass_flask=Glass Flask
+item.bw:strange_potion=Strange Potion
+item.bw:strange_potion_flask=Strange Potion Flask
+item.bw:glass_phial=Empty Glass Phial
+item.bw:filled_phial=Phial of Distilled Gas
+item.bw:raw_orbos=Raw Orbos
+item.bw:essence=Blood Essence
+item.bw:anti_essence=Blood Anti Essence
+item.bw:pure_quintessence=Pure Quintessence
+item.bw:mixed_quintessence=Mixed Quintessence
+item.bw:honey_orbos=Orbos Honeycomb
+item.bw:honey_orbos_bottle=Orbic Honey Bottle
+
+item.bw:normal_broom_item=Flying Broom
+
+item.bw:mortar_and_pestle=Mortar & Pestle
+item.bw:natural_ash=Natural Ash
+item.bw:poppy_dust=Crushed Poppy
+item.bw:blue_orchid_dust=Crushed Blue Orchid
+item.bw:cornflower_dust=Crushed Cornflower
+item.bw:dandelion_dust=Crushed Dandelion
+item.bw:oxeye_daisy_dust=Crushed Oxeye Daisy
+item.bw:crushed_fern=Crushed Fern
+item.bw:obsidian_dust=Crushed Obsidian
+item.bw:coal_dust=Crushed Coal
+
+item.bw:amethyst_nugget=Amethyst Nugget
+item.bw:amethyst_dust=Amethyst Dust
+item.bw:emerald_dust=Emerald Dust
+
+item.bw:bone_talisman=Bone Talisman
+item.bw:athame=Athame
+item.bw:clay_totem=Unattuned Clay Talisman
+item.bw:filled_clay_totem=§dAttuned Clay Talisman§r
+
+
+item.bw:basic_book_1=Mundane Fundamentals
+item.bw:basic_book_2=Alchemical Basics
+item.bw:basic_book_3=Ceremonial Basics
+item.bw:supl_book_1=A Study of Wandcraft
+item.bw:supl_book_2=The Art of Divination
+item.bw:supl_book_3=The Primal Cookbook
+
+
+item.bw:ars_oculta=Mystica Fundamenta
+item.bw:alchemy_book=Potens Alchimia
+item.bw:rites_book=Caeremonium
+item.bw:fae_book=Within Mushroom Rings
+item.bw:spell_weaving_book=Mystica Artificiosa
+
+item.bw:coven_book=Mysticism of the Collective
+item.bw:herbs_book=Of Herbs, Stones & Organs
+item.bw:divining_book=Pondering Your Orb
+item.bw:primal_transmutation_book=Primal Alchemy & You
+item.bw:modifiers_spell_book=Spell Modifiers for Masters
+item.bw:hex_book=Toil & Trouble
+item.bw:wands_book=Integrated Wandlore
+item.bw:adept_ceremony=Ceremonialis Adeptus
+item.bw:mundane_ceremony=Everyday Rites & Rituals
+
+item.bw:faerie_grimoire=Faerie Grimoire
+
+
+item.bw:ritual_scroll=Ceremonial Scroll
+item.bw:blank_scroll=Blank Scroll
+
+
+item.bw:earth_witch_hat=Earth Witch Hat
+item.bw:solar_witch_hat=Solar Witch Hat
+item.bw:ender_witch_hat=Ender Witch Hat
+item.bw:sky_witch_hat=Sky Witch Hat
+item.bw:lunar_witch_hat=Lunar Witch Hat
+item.bw:soul_witch_hat=Soul Witch Hat
+
+item.bw:acacia_wand=Acacia Wood Wand
+item.bw:birch_wand=Birch Wood Wand
+item.bw:dark_oak_wand=Dark Oak Wood Wand
+item.bw:jungle_wand=Jungle Wood Wand
+item.bw:oak_wand=Oak Wood Wand
+item.bw:spruce_wand=Spruce Wood Wand
+
+
+## Entities
+entity.bw:normal_broom.name=Flying Broom
+entity.bw:oak_broom.name=Oak Flying Broom
+
+## Blocks
+tile.bw:runic_slate.name=Andesite Ritual Slate
+tile.bw:diorite_runic_slate.name=Diorite Ritual Slate
+tile.bw:granite_runic_slate.name=Granite Ritual Slate
+tile.bw:deepslate_runic_slate.name=Deepslate Ritual Slate
+tile.bw:blackstone_runic_slate.name=Blackstone Ritual Slate
+tile.bw:witch_bench.name=Witch's Workbench
+tile.bw:archaic_puzzle_block.name=Archaic Puzzle Block
+tile.bw:crystal_ball.name=Crystal Ball
+tile.bw:infused_pumpkin.name=Infused Pumpkin
+tile.bw:sigiled_pumpkin.name=Sigiled Infused Pumpkin
+tile.bw:jackoward.name=Jack o' Ward

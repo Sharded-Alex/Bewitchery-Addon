@@ -1,0 +1,26 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:mixed_quintessence",
+			"menu_category": {
+			  "category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:glint": true,
+			"minecraft:hand_equipped": {
+			  "value": false
+			},
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:allow_off_hand": true,
+      "minecraft:rarity": "rare",
+      "minecraft:icon": {
+        "textures": {
+          "default": "quint_mixed"
+        }
+      }
+		}
+	}
+}

@@ -1,0 +1,460 @@
+{
+  "format_version": "1.26.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "bw:sigiled_pumpkin",
+      "traits": {
+        "minecraft:placement_direction": {
+          "enabled_states": [
+            "minecraft:cardinal_direction"
+          ],
+          "y_rotation_offset": 180
+        }
+      },
+      "states": {
+        "bw:is_asleep": [
+          false,
+          true
+        ],
+        "bw:is_fed": [
+          false,
+          true
+        ],
+        "bw:has_filter": [
+          false,
+          true
+        ],
+        "bw:has_toggle": [
+          false,
+          true
+        ],
+        "bw:has_condition": [
+          false,
+          true
+        ]
+      },
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "up": {
+          "texture": "infused_pumpkin_top",
+          "render_method": "opaque",
+          "face_dimming": true,
+          "ambient_occlusion": 1.0
+        },
+        "north": {
+          "texture": "sigiled_pumpkin_face",
+          "render_method": "opaque",
+          "face_dimming": true,
+          "ambient_occlusion": 1.0
+        },
+        "*": {
+          "texture": "infused_pumpkin_side",
+          "render_method": "opaque",
+          "face_dimming": true,
+          "ambient_occlusion": 1.0
+        },
+        "down": {
+          "texture": "infused_pumpkin_top",
+          "render_method": "opaque",
+          "face_dimming": true,
+          "ambient_occlusion": 1.0
+        }
+      },
+      "minecraft:geometry": "minecraft:geometry.full_block",
+      "minecraft:selection_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "minecraft:collision_box": {
+        "origin": [
+          -8,
+          0,
+          -8
+        ],
+        "size": [
+          16,
+          16,
+          16
+        ]
+      },
+      "minecraft:destructible_by_mining": {
+        "seconds_to_destroy": 1
+      },
+      "bw:warding_magick": {
+        "active_variant": "bw:jackoward",
+        "inactive_variant": "bw:sigiled_pumpkin",
+        "fed_state": "bw:is_fed",
+        "sleep_state": "bw:is_asleep"
+      },
+      "minecraft:movable": {
+        "movement_type": "immovable"
+      },
+      "minecraft:flammable": false,
+      "tag:minecraft:is_axe_item_destructible": {}
+    },
+    "permutations": [
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              180,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+        "components": {
+          "minecraft:transformation": {
+            "rotation": [
+              0,
+              -90,
+              0
+            ]
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == true && q.block_state('bw:has_toggle') == false && q.block_state('bw:has_condition') == false",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "south": {
+              "texture": "sigiled_filter_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == false && q.block_state('bw:has_toggle') == true && q.block_state('bw:has_condition') == false",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "east": {
+              "texture": "sigiled_toggle_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == false && q.block_state('bw:has_toggle') == false && q.block_state('bw:has_condition') == true",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "west": {
+              "texture": "sigiled_condition_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == true && q.block_state('bw:has_toggle') == true && q.block_state('bw:has_condition') == false",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "south": {
+              "texture": "sigiled_filter_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "east": {
+              "texture": "sigiled_toggle_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == true && q.block_state('bw:has_toggle') == false && q.block_state('bw:has_condition') == true",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "south": {
+              "texture": "sigiled_filter_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "west": {
+              "texture": "sigiled_condition_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == false && q.block_state('bw:has_toggle') == true && q.block_state('bw:has_condition') == true",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "east": {
+              "texture": "sigiled_toggle_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "west": {
+              "texture": "sigiled_condition_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "*": {
+              "texture": "infused_pumpkin_side",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:has_filter') == true && q.block_state('bw:has_toggle') == true && q.block_state('bw:has_condition') == true",
+        "components": {
+          "minecraft:material_instances": {
+            "up": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "north": {
+              "texture": "sigiled_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "south": {
+              "texture": "sigiled_filter_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "east": {
+              "texture": "sigiled_toggle_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "west": {
+              "texture": "sigiled_condition_pumpkin_face",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            },
+            "down": {
+              "texture": "infused_pumpkin_top",
+              "render_method": "opaque",
+              "face_dimming": true,
+              "ambient_occlusion": 1.0
+            }
+          }
+        }
+      },
+      {
+        "condition": "q.block_state('bw:is_asleep') == true",
+        "components": {
+          "minecraft:tick": {
+            "interval_range": [
+              20,
+              20
+            ],
+            "looping": true
+          },
+          "bw:warding_magick": {
+            "active_variant": "bw:jackoward",
+            "inactive_variant": "bw:sigiled_pumpkin",
+            "fed_state": "bw:is_fed",
+            "sleep_state": "bw:is_asleep"
+          },
+          "bw:zzz_pumpkin": {}
+        }
+      }
+    ]
+  }
+}

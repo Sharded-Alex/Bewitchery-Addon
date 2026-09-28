@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:mortar_pestle_crushed_obsidian"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#D"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:obsidian"
+      },
+      "D": {
+        "item": "bw:mortar_and_pestle"
+      }
+    },
+    "result": [
+      {
+        "item": "bw:obsidian_dust",
+        "count": 4
+      },
+      {
+        "item": "bw:mortar_and_pestle"
+      }
+    ]
+  }
+}

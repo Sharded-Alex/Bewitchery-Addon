@@ -1,0 +1,80 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "bw:heal_bubble_particle",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"events": {
+			"bw:spawn_sparkle": {
+				"sequence": [
+					{
+						"expression": "temp.color_red = v.color.r;"
+					},
+					{
+						"expression": "temp.color_green = v.color.g;"
+					},
+					{
+						"expression": "temp.color_blue = v.color.b;"
+					},
+					{
+						"expression": "temp.radius = v.spell_radius;"
+					},
+					{
+						"particle_effect": {
+							"effect": "bw:potion_spark_bubble",
+							"type": "emitter_bound",
+							"pre_effect_expression": "v.spell_color.r = temp.color_red; v.spell_color.g = temp.color_green; v.spell_color.b = temp.color_blue; v.spell_radius = temp.radius;"
+						}
+					}
+				]
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "Math.random(12, 14)"
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_lifetime_events": {
+				"creation_event": "bw:spawn_sparkle"
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": "v.spell_radius",
+				"surface_only": true,
+				"direction": "outwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.random(0.5, 0.9)"
+			},
+			"minecraft:particle_initial_speed": 0.2,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": ["(variable.particle_random_1 * 2 - 1) - (variable.particle_age * 0.4)", 0, "(variable.particle_random_2 * 2 - 1) - (variable.particle_age * 0.4)"]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.125, 0.125],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"flipbook": {
+						"base_UV": [64, 64],
+						"size_UV": [8, 8],
+						"step_UV": [-8, 0],
+						"frames_per_second": 10,
+						"max_frame": 8,
+						"stretch_to_lifetime": true
+					}
+				}
+			},
+			"minecraft:particle_appearance_lighting": {},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["variable.color.r", "variable.color.g", "variable.color.b", 1]
+			}
+		}
+	}
+}

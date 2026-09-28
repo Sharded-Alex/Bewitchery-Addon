@@ -1,0 +1,14 @@
+{
+  "format_version": [1,1,0],
+  "bw:witch_bench" : {
+    "sound" : "wood",
+    "textures" : {
+       "down" : "mangrove_planks",
+       "east" : "witch_table_side",
+       "north" : "witch_table_back",
+       "south" : "witch_table_back",
+       "up" : "witch_table_top",
+       "west" : "witch_table_side"
+    }
+  }
+}

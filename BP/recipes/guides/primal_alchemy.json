@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:guide_primal_alchemy"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "bw:solar_imbued_quartz"
+      },
+      {
+        "item": "bw:lunar_imbued_quartz"
+      },
+      {
+        "item": "bw:earth_imbued_quartz"
+      },
+      {
+        "item": "bw:sky_imbued_quartz"
+      },
+      {
+        "item": "bw:ender_imbued_quartz"
+      },
+      {
+        "item": "minecraft:book"
+      }
+    ],
+    "result": {
+      "item": "bw:primal_transmutation_book",
+      "count": 1
+    }
+  }
+}

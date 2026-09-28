@@ -1,0 +1,23 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:amethyst_nugget",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": false,
+			"minecraft:allow_off_hand": true,
+			"minecraft:custom_components": ["bw:get_location"],
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:icon": {
+        "textures": {
+          "default": "amethyst_nugget"
+        }
+      }
+		}
+	}
+}

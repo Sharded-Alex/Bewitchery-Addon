@@ -1,0 +1,14 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "who.knock": {
+      "category": "neutral",
+      "sounds": [
+        {
+          "name": "sounds/knock_1",
+          "is3D": true
+        }
+      ]
+    }
+  }
+}

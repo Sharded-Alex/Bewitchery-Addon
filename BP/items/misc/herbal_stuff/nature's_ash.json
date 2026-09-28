@@ -1,0 +1,19 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:natural_ash"
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:custom_components": ["bw:wandWood", "bw:dwarvone_dust", "bw:trigger_alchemy"],
+			"minecraft:hand_equipped": false,
+			"minecraft:allow_off_hand": false,
+			"minecraft:icon": {
+        "textures": {
+          "default": "natural_ash"
+        }
+      }
+		}
+	}
+}

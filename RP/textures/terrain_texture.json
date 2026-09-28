@@ -1,0 +1,226 @@
+{
+   "num_mip_levels" : 4,
+   "padding" : 8,
+   "resource_pack_name" : "vanilla",
+   "texture_data" : {
+      "normal_glass_ball" : {
+         "textures" : "textures/blocks/crystal_ball/Normal"
+      },
+      "blank_slate" : {
+         "textures" : "textures/blocks/ritual_slate/ritual_slate_base"
+      },
+      "candela" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_candela"
+      },
+      "celestia" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_celestia"
+      },
+      "eclipsis" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_eclipsis"
+      },
+      "falleus" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_falleus"
+      },
+      "ignis" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_ignis"
+      },
+      "lampen" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_lampen"
+      },
+      "perthus" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_perthus"
+      },
+      "staria" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_staria"
+      },
+      "triangula" : {
+         "textures" : "textures/blocks/ritual_slate/inscribed_slate_triangula"
+      },
+      "red_glyph" : {
+         "textures" : "textures/blocks/ritual_slate/red_central_glyph"
+      },
+      
+      "granite_blank_slate" : {
+         "textures" : "textures/blocks/ritual_slate/granite_ritual_slate_base"
+      },
+      "granite_candela" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_candela"
+      },
+      "granite_celestia" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_celestia"
+      },
+      "granite_eclipsis" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_eclipsis"
+      },
+      "granite_falleus" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_falleus"
+      },
+      "granite_ignis" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_ignis"
+      },
+      "granite_lampen" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_lampen"
+      },
+      "granite_perthus" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_perthus"
+      },
+      "granite_staria" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_staria"
+      },
+      "granite_triangula" : {
+         "textures" : "textures/blocks/ritual_slate/granite_inscribed_triangula"
+      },
+      "granite_red_glyph" : {
+         "textures" : "textures/blocks/ritual_slate/red_granite_central_glyph"
+      },
+      
+      "blackstone_blank_slate" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_ritual_slate_base"
+      },
+      "blackstone_candela" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_candela"
+      },
+      "blackstone_celestia" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_celestia"
+      },
+      "blackstone_eclipsis" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_eclipsis"
+      },
+      "blackstone_falleus" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_falleus"
+      },
+      "blackstone_ignis" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_ignis"
+      },
+      "blackstone_lampen" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_lampen"
+      },
+      "blackstone_perthus" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_perthus"
+      },
+      "blackstone_staria" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_staria"
+      },
+      "blackstone_triangula" : {
+         "textures" : "textures/blocks/ritual_slate/blackstone_inscribed_triangula"
+      },
+      "blackstone_red_glyph" : {
+         "textures" : "textures/blocks/ritual_slate/red_blackstone_central_glyph"
+      },
+      
+      "diorite_blank_slate" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_ritual_slate_base"
+      },
+      "diorite_candela" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_candela"
+      },
+      "diorite_celestia" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_celestia"
+      },
+      "diorite_eclipsis" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_eclipsis"
+      },
+      "diorite_falleus" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_falleus"
+      },
+      "diorite_ignis" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_ignis"
+      },
+      "diorite_lampen" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_lampen"
+      },
+      "diorite_perthus" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_perthus"
+      },
+      "diorite_staria" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_staria"
+      },
+      "diorite_triangula" : {
+         "textures" : "textures/blocks/ritual_slate/diorite_inscribed_triangula"
+      },
+      "diorite_red_glyph" : {
+         "textures" : "textures/blocks/ritual_slate/red_diorite_central_glyph"
+      },
+      
+      "deepslate_blank_slate" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_ritual_slate_base"
+      },
+      "deepslate_candela" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_candela"
+      },
+      "deepslate_celestia" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_celestia"
+      },
+      "deepslate_eclipsis" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_eclipsis"
+      },
+      "deepslate_falleus" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_falleus"
+      },
+      "deepslate_ignis" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_ignis"
+      },
+      "deepslate_lampen" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_lampen"
+      },
+      "deepslate_perthus" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_perthus"
+      },
+      "deepslate_staria" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_staria"
+      },
+      "deepslate_triangula" : {
+         "textures" : "textures/blocks/ritual_slate/deepslate_inscribed_triangula"
+      },
+      "deepslate_red_glyph" : {
+         "textures" : "textures/blocks/ritual_slate/red_deepslate_central_glyph"
+      },
+      
+      "infused_pumpkin_side" : {
+        "textures" : "textures/blocks/infused_pumpkin/enchanted_pumpkin_side.png"
+      },
+      "sigiled_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_enchanted_pumpkin.png"
+      },
+      "sigiled_filter_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_filter_enchanted_pumpkin.png"
+      },
+      "sigiled_condition_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_condition_enchanted_pumpkin.png"
+      },
+      "sigiled_toggle_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_toggle_enchanted_pumpkin.png"
+      },
+      "lit_sigiled_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_activated_enchanted_pumpkin.png"
+      },
+      "lit_sigiled_filter_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_activated_filter_enchanted_pumpkin.png"
+      },
+      "lit_sigiled_condition_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_activated_condition_enchanted_pumpkin.png"
+      },
+      "lit_sigiled_toggle_pumpkin_face" : {
+        "textures" : "textures/blocks/infused_pumpkin/sigiled_activated_toggle_enchanted_pumpkin.png"
+      },
+      "infused_pumpkin_top" : {
+        "textures" : "textures/blocks/infused_pumpkin/enchanted_pumpkin_top.png"
+      },
+      
+      "transparent" : {
+         "textures" : "textures/blocks/invisible"
+      },
+      "witch_table_front" : {
+         "textures" : "textures/blocks/witch_table/witch_table_back"
+      },
+      "witch_table_side" : {
+         "textures" : "textures/blocks/witch_table/witch_table_side"
+      },
+      "witch_table_top" : {
+         "textures" : "textures/blocks/witch_table/witch_table_top"
+      },
+      "witch_table_back" : {
+         "textures" : "textures/blocks/witch_table/witch_table_front"
+      }
+   }
+}

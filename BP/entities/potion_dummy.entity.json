@@ -1,0 +1,84 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "bw:potion_dummy",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+      "break_death": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+		"components": {
+			"minecraft:physics": { 
+				"has_gravity": false, //Optional, allows the entity to not be affected by gravity or water
+				"has_collision": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"deals_damage": false
+				}
+			},
+			"minecraft:type_family": {
+        "family": ["bsw:dummy"] // Excludes it from being picked up by wards
+      },
+			"minecraft:environment_sensor": {
+        "triggers": [
+          {
+            "event": "bw:kill_block",
+            "filters": {
+              "all_of": [
+                {
+                  "test": "in_block",
+                  "operator": "!=",
+                  "value": "bw:witch_pot"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:block_sensor": {
+        "sensor_radius": 1,
+        "sources": [
+          {
+            "test": "in_block",
+            "operator": "!=",
+            "value": "bw:witch_pot"
+          }
+        ],
+        "on_break": [
+          {
+            "block_list": [
+              "bw:witch_pot"
+            ],
+            "on_block_broken": {
+              "event": "bw:kill_block",
+              "target": "self"
+            }
+          }
+        ]
+      },
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			}
+		},
+		"events": {
+      "bw:kill_block": {
+        "add": {
+          "component_groups": [
+            "break_death"
+          ]
+        }
+      }
+    }
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:mortar_pestle_crushed_poppy"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#V",
+      "F"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:red_flower",
+        "data": 0
+      },
+      "V": {
+        "item": "bw:natural_ash"
+      },
+      "F": {
+        "item": "bw:mortar_and_pestle"
+      }
+    },
+    "result": [
+      {
+        "item": "bw:poppy_dust",
+        "count": 6
+      },
+      {
+        "item": "bw:mortar_and_pestle"
+      }
+    ]
+  }
+}

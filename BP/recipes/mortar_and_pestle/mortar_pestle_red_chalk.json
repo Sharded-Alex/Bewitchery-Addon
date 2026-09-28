@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:mortar_pestle_red_chalk"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#K",
+      "D"
+    ],
+    "key": {
+      "#": {
+        "item": "bw:white_chalk"
+      },
+      "K": {
+        "item": "minecraft:red_dye"
+      },
+      "D": {
+        "item": "bw:mortar_and_pestle"
+      }
+    },
+    "result": [
+      {
+        "item": "bw:red_chalk",
+        "count": 4
+      },
+      {
+        "item": "bw:mortar_and_pestle"
+      }
+    ]
+  }
+}

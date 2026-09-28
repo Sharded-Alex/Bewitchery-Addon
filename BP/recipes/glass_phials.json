@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:glass_phial_recipe"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "result":{
+      "item": "bw:glass_phial"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:deepslate_ritual_slate"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:cobbled_deepslate"
+      }
+    },
+    "result": {
+      "item": "bw:deepslate_runic_slate",
+      "count": 6
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.20.80",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:filled_clay_totem"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": false,
+			"minecraft:glint": true,
+			"minecraft:icon": "effect_totem"
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "bw:burn_sapling_ash"
+    },
+
+    
+    "tags": ["furnace", "campfire"],
+    "input": "minecraft:sapling",
+    "output": "bw:natural_ash"
+  }
+  
+}

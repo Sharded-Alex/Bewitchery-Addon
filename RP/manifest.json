@@ -1,0 +1,50 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Bewitchery",
+		"name": "Bewitchery [R] 0.7.1",
+		"uuid": "d34dfbc3-a2fd-440d-8c18-6d39b1ee9d81",
+		"version": [
+			0,
+			7,
+			1
+		],
+		"min_engine_version": [
+			1,
+			20,
+			30
+		]
+	},
+	"modules": [
+		{
+			"description": "",
+			"type": "resources",
+			"uuid": "daeec963-5629-431f-a631-50cb092f2df4",
+			"version": [
+				0,
+				7,
+				1
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "436c0db8-1403-4ec1-b328-0644de80f2be",
+			"version": [
+				0,
+				7,
+				1
+			]
+		}
+	],
+	"metadata": {
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:attachable": {
+		"description": {
+			"identifier": "bw:sky_witch_hat",
+			"materials": {
+				"default": "armor",
+				"enchanted": "armor_enchanted"
+			},
+			"textures": {
+				"default": "textures/models/hats/sky_witch_hat",
+				"enchanted": "textures/misc/enchanted_item_glint"
+			},
+			"geometry": {
+				"default": "geometry.witch_hat"
+			},
+			"scripts": {
+				"parent_setup": "variable.helmet_layer_visible = 0.0;"
+			},
+			"render_controllers": ["controller.render.armor"]
+		}
+	}
+}

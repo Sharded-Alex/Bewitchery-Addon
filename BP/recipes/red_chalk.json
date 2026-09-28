@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:red_chalk"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "R#"
+    ],
+    "key": {
+      "#": {
+        "item": "bw:white_chalk"
+      },
+      "R": {
+        "item": "minecraft:dye",
+        "data": 1
+      }
+    },
+    "result": [
+      {
+        "item": "bw:red_chalk",
+        "count": 1
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:filled_phial",
+			"menu_category": {
+        "is_hidden_in_commands": true 
+      }
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:can_destroy_in_creative": false,
+      "minecraft:icon": {
+        "textures": {
+          "default": "filled_vial",
+          "dyed": "filled_vial"
+          }
+      },
+      "minecraft:dyeable": {}
+		}
+	}
+}

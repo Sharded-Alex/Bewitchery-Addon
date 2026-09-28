@@ -1,0 +1,24 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:glass_flask",
+			"menu_category": {  
+        "group": "itemGroup.name.potions",
+        "category": "equipment", 
+        "is_hidden_in_commands": false 
+      }
+		},
+		"components": {
+			"minecraft:max_stack_size": 64,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:icon": {
+        "textures": {
+          "default": "empty_flask"
+        }
+      }
+		}
+	}
+}

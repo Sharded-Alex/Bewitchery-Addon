@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "bw:shock_bolt_trail",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.size = Math.random(0.1, 0.2);"
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "Math.random(6, 9)"
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.1
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": 0.4,
+				"direction": ["(variable.particle_random_1 * 0) - (0 / 2.0)", "(variable.particle_random_2 * 0) - (0 / 2.0)", "(variable.particle_random_3 * 0) - (0 / 2.0)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "((variable.particle_random_1 * 2) + 3) / 20"
+			},
+			"minecraft:particle_initial_speed": -1,
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 0.96
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.size", "variable.size"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 128,
+					"texture_height": 128,
+					"uv": [16, 48],
+					"uv_size": [8, 8]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": ["v.color.r", "v.color.g", "v.color.b", 1]
+			}
+		}
+	}
+}

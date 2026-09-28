@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:blackstone_ritual_slate"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:blackstone"
+      }
+    },
+    "result": {
+      "item": "bw:blackstone_runic_slate",
+      "count": 6
+    }
+  }
+}

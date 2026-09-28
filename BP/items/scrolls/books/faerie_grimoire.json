@@ -1,0 +1,32 @@
+{
+	"format_version": "1.21.60",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:faerie_grimoire",
+			"menu_category": {
+			  "category": "items"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": false,
+			"minecraft:allow_off_hand": true,
+			"minecraft:glint": false,
+			"minecraft:custom_components": ["bw:lesser_fae_offering"],
+			"minecraft:use_modifiers": {
+        "movement_modifier": 0.85,
+        "use_duration": 1
+      },
+      "minecraft:tags": {
+			  "tags": [
+			    "minecraft:bookshelf_books"
+			  ]
+			},
+			"minecraft:icon": {
+				"textures": {
+				  "default": "faerie_grimoire"
+				}
+			}
+		}
+	}
+}

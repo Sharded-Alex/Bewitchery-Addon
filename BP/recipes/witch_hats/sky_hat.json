@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:sky_hat"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "  #",
+      " # ",
+      "#*#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:black_wool"
+      },
+      "*": {
+        "item": "bw:sky_imbued_quartz"
+      }
+    },
+    "result": {
+      "item": "bw:sky_witch_hat"
+    }
+  }
+}

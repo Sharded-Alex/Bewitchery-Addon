@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:iron_athame"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      " #",
+      "/"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "/": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "bw:athame",
+      "count": 1
+    }
+  }
+}

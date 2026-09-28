@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "bw:buzz_bubble_particle",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "Math.random(7, 12)"
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": "v.spell_radius",
+				"surface_only": true,
+				"direction": "inwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.Random(0.75, 0.9)"
+			},
+			"minecraft:particle_initial_speed": 0.1,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0.1, 0.1, 0.1]
+			},
+			"minecraft:particle_appearance_billboard": {
+        "size": [ 0.15, 0.15 ],
+        "facing_camera_mode": "lookat_xyz",
+        "uv": {
+          "texture_width": 128,
+          "texture_height": 128,
+          "uv": [ 8, 56 ],
+          "uv_size": [ 8, 8 ]
+        }
+      },
+			"minecraft:particle_appearance_tinting": {
+				"color": ["v.color.r", "v.color.g", "v.color.b", "variable.particle_age > (variable.particle_lifetime / 2.0) ? 1 - 0.60 * ((variable.particle_age - (variable.particle_lifetime / 2.0)) / (variable.particle_lifetime / 2.0)) : 1.0"]
+			}
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": "1.26.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:dark_oak_wand",
+			"menu_category": {
+			  "category": "equipment"
+			}
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:hand_equipped": {
+			  "value": true
+			},
+			"minecraft:can_destroy_in_creative": false,
+			"minecraft:allow_off_hand": true,
+			"minecraft:stacked_by_data": {
+        "value": false
+      },
+      "minecraft:use_modifiers": {
+        "use_duration": 99999,
+        "movement_modifier": 1
+      },
+      "bw:bind_spells": {},
+      "bw:wand_touch": {},
+      "bw:nexus_creator": {},
+      
+      // Wand Personality
+      "bw:wand_personality": {},
+			"minecraft:tags": {
+        "tags": [
+          "bw:castingWand"
+        ]
+      },
+      "minecraft:icon": {
+        "textures": {
+          "default": "wand_dark_oak"
+        }
+      }
+		}
+	}
+}

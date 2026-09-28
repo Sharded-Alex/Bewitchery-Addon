@@ -1,0 +1,69 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Bewitchery",
+		"name": "Bewitchery [B] 0.7.1",
+		"uuid": "436c0db8-1403-4ec1-b328-0644de80f2be",
+		"version": [
+			0,
+			7,
+			1
+		],
+		"min_engine_version": [
+			1,
+			20,
+			30
+		]
+	},
+	"modules": [
+		{
+			"description": "",
+			"type": "data",
+			"uuid": "62b79229-ee85-4006-a5b8-3ca3d77763cc",
+			"version": [
+				0,
+				7,
+				1
+			]
+		},
+		{
+			"uuid": "37385aaa-2af4-4a30-87c8-3c784ea6d092",
+			"version": [
+				1,
+				1,
+				0
+			],
+			"type": "script",
+			"language": "javascript",
+			"entry": "scripts/Main.js"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "d34dfbc3-a2fd-440d-8c18-6d39b1ee9d81",
+			"version": [
+				0,
+				7,
+				1
+			]
+		},
+		{
+			"module_name": "@minecraft/server-ui",
+			"version": "2.0.0"
+		},
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.2.0"
+		}
+	],
+	"metadata": {
+		"generated_with": {
+			"bridge": [
+				"2.7.54"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	}
+}

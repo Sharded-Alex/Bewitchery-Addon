@@ -1,0 +1,41 @@
+{
+	"format_version": "1.26.0",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:solar_witch_hat",
+			"menu_category": {
+			  "category": "equipment",
+			  "group": "minecraft:itemGroup.name.helmet"
+			}
+		},
+		"components": {
+		  "minecraft:icon": {
+        "textures": {
+          "default": "solar_hat"
+        }
+      },
+			"minecraft:max_stack_size": 1,
+			"minecraft:enchantable": {
+				"value": 3,
+				"slot": "armor_head"
+			},
+			"bw:familiar_container": {},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": ["bw:solar_imbued_quartz"],
+						"repair_amount": "context.other->query.remaining_durability + 0.05 * context.other->query.max_durability"
+					}
+				]
+			},
+			"minecraft:wearable": {
+				"protection": 4,
+				"slot": "slot.armor.head",
+				"hides_player_location": true
+			},
+			"minecraft:durability": {
+				"max_durability": 300
+			}
+		}
+	}
+}

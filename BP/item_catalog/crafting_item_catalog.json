@@ -1,0 +1,110 @@
+{
+  "format_version": "1.21.60",
+  "minecraft:crafting_items_catalog": {
+    "categories": [
+      {
+        "category_name": "items",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "bw:natural_ash",
+              "name": "bw:dust_group"
+            },
+            "items": [
+              "bw:natural_ash",
+              "bw:amethyst_dust",
+              "bw:coal_dust",
+              "bw:emerald_dust",
+              "bw:obsidian_dust",
+              "bw:blue_orchid_dust",
+              "bw:cornflower_dust",
+              "bw:dandelion_dust",
+              "bw:oxeye_daisy_dust",
+              "bw:poppy_dust",
+              "bw:crushed_fern",
+              "bw:white_chalk",
+              "bw:red_chalk"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "bw:mortar_and_pestle",
+              "name": "bw:tools_group"
+            },
+            "items": [
+              "bw:mortar_and_pestle",
+              "bw:athame",
+              "bw:clay_totem",
+              "bw:normal_broom_item",
+              "bw:spoon",
+              "bw:amethyst_nugget",
+              "bw:raw_orbos"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "bw:solar_imbued_quartz",
+              "name": "bw:crystal_group"
+            },
+            "items": [
+              "bw:solar_imbued_quartz",
+              "bw:lunar_imbued_quartz",
+              "bw:earth_imbued_quartz",
+              "bw:sky_imbued_quartz",
+              "bw:ender_imbued_quartz"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "bw:ars_oculta",
+              "name": "bw:guides_group"
+            },
+            "items": [
+              "bw:ars_oculta",
+              "bw:alchemy_book",
+              "bw:rites_book",
+              "bw:fae_book",
+              "bw:spell_weaving_book"
+            ]
+          },
+          {
+            "group_identifier": {
+              "icon": "bw:herbs_book",
+              "name": "bw:supplementary_group"
+            },
+            "items": [
+              "bw:herbs_book",
+              "bw:primal_transmutation_book",
+              "bw:coven_book",
+              "bw:divining_book",
+              "bw:modifiers_spell_book",
+              "bw:mundane_ceremony",
+              "bw:adept_ceremony",
+              "bw:wands_book",
+              "bw:hex_book"
+            ]
+          }
+        ]
+      },
+      {
+        "category_name": "equipment",
+        "groups": [
+          {
+            "group_identifier": {
+              "icon": "bw:oak_wand",
+              "name": "bw:wands_group"
+            },
+            "items": [
+              "bw:oak_wand",
+              "bw:dark_oak_wand",
+              "bw:birch_wand",
+              "bw:jungle_wand",
+              "bw:spruce_wand",
+              "bw:acacia_wand"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

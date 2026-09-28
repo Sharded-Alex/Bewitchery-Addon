@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:mortar_pestle_glowstone_dust"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "#V",
+      "F"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:glow_berries"
+      },
+      "V": {
+        "item": "bw:natural_ash"
+      },
+      "F": {
+        "item": "bw:mortar_and_pestle"
+      }
+    },
+    "result": [
+      {
+        "item": "minecraft:glowstone_dust",
+        "count": 4
+      },
+      {
+        "item": "bw:mortar_and_pestle"
+      }
+    ]
+  }
+}

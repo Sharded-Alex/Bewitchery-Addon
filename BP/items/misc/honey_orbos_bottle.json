@@ -1,0 +1,28 @@
+{
+	"format_version": "1.21.30",
+	"minecraft:item": {
+		"description": {
+			"identifier": "bw:honey_orbos_bottle"
+		},
+		"components": {
+			"minecraft:max_stack_size": 16,
+			"minecraft:hand_equipped": false,
+			"minecraft:foil": false,
+			"minecraft:can_destroy_in_creative": true,
+			"minecraft:food": {
+			  "can_always_eat": true,
+			  "nutrition": 0
+			},
+			"minecraft:rarity": "uncommon",
+			"minecraft:use_animation": "drink",
+			"minecraft:use_modifiers": {
+        "use_duration": 1
+      },
+			"minecraft:icon": {
+        "textures": {
+          "default": "orbos_honey_bottle"
+          }
+      }
+		}
+	}
+}

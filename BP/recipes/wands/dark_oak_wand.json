@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:dark_oak_wand"
+    },
+
+    
+    "tags": [ "witch_altar" ],
+    "ingredients": [
+      {
+        "item": "minecraft:dark_oak_sapling"
+      },
+      {
+        "item": "bw:natural_ash"
+      }
+    ],
+    "result": {
+      "item": "bw:dark_oak_wand",
+      "count": 1
+    }
+  }
+}

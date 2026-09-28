@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bw:jungle_wand"
+    },
+
+    
+    "tags": [ "witch_altar" ],
+    "ingredients": [
+      {
+        "item": "minecraft:jungle_sapling"
+      },
+      {
+        "item": "bw:natural_ash"
+      }
+    ],
+    "result": {
+      "item": "bw:jungle_wand",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bw:ender_hat"
+    },
+    "tags": [
+      "witch_altar"
+    ],
+    "pattern": [
+      "  #",
+      " # ",
+      "#*#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:black_wool"
+      },
+      "*": {
+        "item": "bw:ender_imbued_quartz"
+      }
+    },
+    "result": {
+      "item": "bw:ender_witch_hat"
+    }
+  }
+}
