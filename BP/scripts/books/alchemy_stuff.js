@@ -6,7 +6,7 @@ export const alchemy_book = {
       "",
       "The witch must know of a different way to craft the same potions as a brewing stand. Perhaps she has alchemical secrets that only her kind knows. Everyone knows the Illagers draw upon unknown and unkind powers we cannot fathom. Thankfully, we also have alchemical secrets Illager Witches cannot fathom.",
       "",
-      "In this book, I will take the time to go over the uses of the Cauldron in Bewitched Alchemy. In fact, §devery bit of magic within this book uses the Cauldron as an instrument§r. Alchemy can be split into three core aspects. They are as follows:",
+      "In this book, I will take the time to go over the uses of the Cauldron in Bewitched Alchemy. In fact, §devery bit of magic within this book uses the Cauldron as an instrument§r. Alchemy can be split into two core aspects. They are as follows:",
       ""
     ],
     "buttons": [
@@ -189,7 +189,7 @@ export const alchemy_book = {
     "body": [
       `Strange Potions can be improved by adding the §dappropriate Phial of Distilled Gas§r to the Cauldron. This adds a secondary effect to the final bottled product (which is the Strange Potion or Strange Splash Potion), hopefully improving the potion in some way. This addition is only ever really helpful if the alchemist understands what they are trying to achieve so it can absolutely be ignored.`,
       ``,
-      `Distillation can only be achieved with one reagent in the Cauldron (VERY important). It is this reagent that determines what sort of effect the Phial has as well as the potion effect it affects §awhen bottled§dr (more on this later). After waiting for about 15 seconds, the Cauldron should begin to release thick smoke. When that smoke begins, simply interacting with the pot while holding an §dGlass Phial§r should produce a §dPhial of Distilled Gas§r.`,
+      `Distillation can only be achieved with one reagent in the Cauldron (VERY important). It is this reagent that determines what sort of effect the Phial has as well as the potion effect it affects §awhen bottled§d (more on this later). After waiting for about 15 seconds, the Cauldron should begin to release thick smoke. When that smoke begins, simply interacting with the pot while holding an §dGlass Phial§r should produce a §dPhial of Distilled Gas§r.`,
       ``,
       `Distilled Gases may not all do the same things. What they actually do when added as a Secondary Effect depends on their §atype§r. The types of Distilled Gases are:`,
       ``,
@@ -203,7 +203,7 @@ export const alchemy_book = {
       ``,
       `The specific potion effect that is affected by the Distilled Gas depends on the potency of the reagent when it was being bottled in the Glass Phial. This is another reason why having some knowledge of the Alchemical Spectrum of the reagent being turned into a Distilled Gas is important. Of course, there will always be the few true alchemist witches that spend the time to collect all the possible Distilled Gases from each reagent so that they always have this aid whenever they feel it is necessary.`,
       ``,
-      `Finally, the Phial of Distilled Gas is added to a Cauldron simply by interacting with it while there are reagents in it. However, The Secondary Effect it brings with it is only applied after the potion is bottled so many alchemists prefer to add it as the very last component/ingredient, especially when they are not following any particular recipe.`,
+      `Finally, the Phial of Distilled Gas is added to a Cauldron simply by interacting with it while there are reagents in it. However, the Secondary Effect it brings with it is only applied after the potion is bottled so many alchemists prefer to add it as the very last component/ingredient, especially when they are not following any particular recipe.`,
       ``
     ],
     "buttons": [
