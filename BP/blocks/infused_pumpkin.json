@@ -1,5 +1,5 @@
 {
-  "format_version": "1.26.0",
+  "format_version": "1.26.50",
   "minecraft:block": {
     "description": {
       "identifier": "bw:infused_pumpkin",
@@ -65,6 +65,9 @@
         "seconds_to_destroy": 1
       },
       "bw:ward_dustable": {},
+      "minecraft:block_entity": {
+        "dynamic_properties": true
+      },
       "minecraft:movable": {
         "movement_type": "immovable"
       },

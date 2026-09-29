@@ -232,7 +232,7 @@ export function readJack(jack, witch) {
   
   // Effects
   if (jack.effect == "bw:blue_orchid_dust") {
-    str.rawtext.push({"text": `§6Effect:§r §aTransfiguration§r - The target is transfigured into the type of creature the provided blood belonged to. For this to work however, the target must have §cless than or equal health§r to that creature's maximum health + 3 hearts.\n`});
+    str.rawtext.push({"text": `§6Effect:§r §aTransfiguration§r - The target is transfigured into the type of creature the provided blood belonged to. For this to work however, the target must have §cless than 3 hearts of health below or equal health to§r that creature's maximum health.\n`});
     str.rawtext.push({"text": `§6Blood Provided:§r §4${jack.params[0]}§r\n`});
   }
   if (jack.effect == "bw:cornflower_dust") {
@@ -370,18 +370,15 @@ export const wardingDusts = {
       
       let entityHealth = entity.getComponent("minecraft:health");
       if (entityHealth != undefined) {
-        if (params[0] == undefined) {
-          return;
-        }
-        if (params[0] == entity.typeId) {
+        if (params[1] == undefined) {
           return;
         }
         
-        let potentialEnt = entity.dimension.spawnEntity(params[0], entity.location);
+        let potentialEntHealth = params[1];
+
+        let healthDiff = Math.round(potentialEntHealth - entityHealth.currentValue);
         
-        let potentialEntHealth = potentialEnt.getComponent("minecraft:health");
-        
-        if (entityHealth.currentValue <= potentialEntHealth.effectiveMax + 6) {
+        if (healthDiff >= 0 && healthDiff <= 6) {
           entity.remove();
         } else {
           potentialEnt.remove();
@@ -404,12 +401,20 @@ export const wardingDusts = {
         if (item?.getDynamicProperty("bw:blood")) {
           let blood = JSON.parse(item.getDynamicProperty("bw:blood"));
           arr.push(blood.type);
+
+          let potentialEnt = block.dimension.spawnEntity(blood.type, block.location);
+
+          if (potentialEnt.getComponent("minecraft:health")) {
+            arr.push(potentialEnt.getComponent("minecraft:health").effectiveMax);
+          }
+
+          potentialEnt.remove();
           break;
         }
       }
       return arr;
     },
-    "paramsAmt": 1,
+    "paramsAmt": 2,
     "trigger": "on_attack"
   },
   "bw:cornflower_dust": {
@@ -477,7 +482,11 @@ export const wardingDusts = {
       
       if (params[0] != undefined) {
         let potionEffect = params[0];
-        entity.addEffect(potionEffect.potionEffectId, potionEffect.potionDuration, {amplifier: potionEffect.potionAmplifier})
+        if (!entity.getEffect(potionEffect.potionEffectId)) {
+          entity.addEffect(potionEffect.potionEffectId, potionEffect.potionDuration);
+        } else {
+          return;
+        }
       }
     },
     "parameter": (block) => {

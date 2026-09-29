@@ -1,6 +1,5 @@
 bw:dust_group.name=Witch Dusts
-bw:tools_group.name=Witch Tools
-bw:crystal_group.name=Primal Crystals
+bw:tools_group.name=Witch ToPumpkin Magick_group.name=Primal Crystals
 bw:guides_group.name=Major Books
 bw:supplementary_group.name=Minor Books
 bw:wands_group.name=Witch Wands
@@ -52,13 +51,14 @@ item.bw:emerald_dust=Emerald Dust
 
 item.bw:bone_talisman=Bone Talisman
 item.bw:athame=Athame
-item.bw:clay_totem=Unattuned Clay Talisman
-item.bw:filled_clay_totem=§dAttuned Clay Talisman§r
+item.bw:clay_totem=Unattuned Clay Totem
+item.bw:filled_clay_totem=§dAttuned Clay Totem§r
 
 
 item.bw:basic_book_1=Mundane Fundamentals
 item.bw:basic_book_2=Alchemical Basics
 item.bw:basic_book_3=Ceremonial Basics
+item.bw:basic_book_4=Pumpkin Magick
 item.bw:supl_book_1=A Study of Wandcraft
 item.bw:supl_book_2=The Art of Divination
 item.bw:supl_book_3=The Primal Cookbook

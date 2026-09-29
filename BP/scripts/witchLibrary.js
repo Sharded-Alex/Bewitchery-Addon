@@ -6,6 +6,7 @@ import { triggerBook, checkPlayerTags } from "./bookScript.js";
 import { mundane_fundamentals, wands_book, divination_book } from "./books/beginner_stuff.js";
 import { alchemy_book, primal_cookbook } from "./books/alchemy_stuff.js";
 import { ceremony_book } from "./books/ceremonies.js";
+import { jackBook } from "./books/jackBooks.js";
 
 const allBooks = {
   "mundane_fundamentals": mundane_fundamentals,
@@ -13,7 +14,8 @@ const allBooks = {
   "divination_book": divination_book,
   "alchemy_book": alchemy_book,
   "primal_cookbook": primal_cookbook,
-  "ceremony_book": ceremony_book
+  "ceremony_book": ceremony_book,
+  "jack_o_ward_book": jackBook
 }
 
 world.afterEvents.itemUse.subscribe(e => {

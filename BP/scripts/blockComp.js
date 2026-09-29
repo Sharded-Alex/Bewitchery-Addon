@@ -2438,6 +2438,24 @@ export function getJackDays(day) {
   return Math.abs(world.getDay() - day);
 }
 
+function getJackBelow(block) {
+  let dim = block.dimension;
+  
+  let newLoc = {
+    x: block.location.x,
+    x: block.location.y - 1,
+    x: block.location.z
+  }
+  if (dim.isChunkLoaded(newLoc)) {
+    let dynProp = block.getComponent("minecraft:dynamic_properties")
+    if (dynProp.get("bw:ward_info")) {
+      return JSON.parse(dynProp.get("bw:ward_info"))
+    }
+  } else {
+    return;
+  }
+}
+
 export function reduceCost(wand, cost, caster = undefined) {
   let orbosReduction = 0;
   let fatigueReduction = 0;
@@ -2680,34 +2698,45 @@ system.beforeEvents.startup.subscribe(initEvent => {
       const block = event.block;
       const dimension = event.dimension;
       let isActivated = false;
+      
+      let blockDP = block.getComponent("minecraft:dynamic_properties");
 
-      let jackName = `definingPumpkin:${Math.floor(block.x)}_${Math.floor(block.y)}_${Math.floor(block.z)}_${dimension.id}`;
-      let jackBelow = `pumpkinWard:${Math.floor(block.x)}_${Math.floor(block.y - 1)}_${Math.floor(block.z)}_${dimension.id}`;
-
-      let jackObj = {
-        "position": {
-          x: Math.floor(block.x),
-          y: Math.floor(block.y),
-          z: Math.floor(block.z)
-        },
-        "dimension": dimension.id,
-        "shields": 0,
-        "effect": undefined,
-        "trigger": undefined
-      };
-
-      if (world.getDynamicProperty(jackName) == undefined) {
-        if (world.getDynamicProperty(jackBelow)) {
-          let belowJack = JSON.parse(world.getDynamicProperty(jackBelow));
-          jackObj.position = belowJack.position;
-          world.setDynamicProperty(jackName, JSON.stringify(jackObj));
-          isActivated = true;
-        } else {
-          world.setDynamicProperty(jackName, JSON.stringify(jackObj));
-          isActivated = true;
-        }
+      if (!blockDP) {
+        console.warn('Ward Block has no ability to store dynamic properties! Fix that!');
+        return;
       }
 
+      // Define things in Jack
+      let jackObj = {
+        "position": {
+          x: block.location.x,
+          y: block.location.y,
+          z: block.location.z
+        },
+        "totemPos": 1,
+        "dimension": dimension.id,
+        "shields": 0,
+        "effect": null,
+        "trigger": null
+      };
+
+      // Check if this is a Jack o' Totem 
+      // Only allow a maximum of 6 stacked Jacks
+      // Maybe remove encryption and decryption. Too complicated to explain.
+      let jackBelow = getJackBelow(block);
+      if (jackBelow != undefined) {
+        if (jackBelow.totemPos < 6) {
+          jackObj.totemPos = jackBelow.totemPos + 1;
+          jackObj.position = jackBelow.position;
+        }
+      }
+      
+
+      if (!blockDP.get("bw:ward_info")) {
+        blockDP.set("bw:ward_info", JSON.stringify(jackObj));
+        isActivated = true;
+      }
+      
       if (isActivated) {
         console.warn("Activated Pumpkin");
       }
@@ -2715,11 +2744,12 @@ system.beforeEvents.startup.subscribe(initEvent => {
     onBreak: event => {
       const block = event.block;
       const dimension = event.dimension;
+      let blockDP = block.getComponent("minecraft:dynamic_properties");
 
-      let jackName = `definingPumpkin:${Math.floor(block.x)}_${Math.floor(block.y)}_${Math.floor(block.z)}_${dimension.id}`;
+      let jackWard = blockDP.get("bw:ward_info");
 
-      if (world.getDynamicProperty(jackName) != undefined) {
-        world.setDynamicProperty(jackName, undefined);
+      if (jackWard) {
+        console.warn(jackWard);
         console.warn("Prelim. Jack Broke");
         // Snap Sound
       }
@@ -2734,11 +2764,12 @@ system.beforeEvents.startup.subscribe(initEvent => {
       if (playerInv) {
         item = playerInv.getItem(player.selectedSlotIndex);
       }
+      let blockDP = block.getComponent("minecraft:dynamic_properties");
 
-      let definingJackName = `definingPumpkin:${Math.floor(block.x)}_${Math.floor(block.y)}_${Math.floor(block.z)}_${dimension.id}`;
+      let definingJackID = blockDP.get("bw:ward_info");
 
-      if (world.getDynamicProperty(definingJackName)) {
-        let definingJack = JSON.parse(world.getDynamicProperty(definingJackName));
+      if (definingJackID) {
+        let definingJack = JSON.parse(definingJackID);
 
         // Dusts
         // Get all possible Dusts
@@ -2880,9 +2911,6 @@ system.beforeEvents.startup.subscribe(initEvent => {
             definingJack.lastFed = world.getDay();
             definingJack.storedOrbos = 150;
 
-            world.setDynamicProperty(`pumpkinWard:${Math.floor(block.x)}_${Math.floor(block.y)}_${Math.floor(block.z)}_${dimension.id}`, JSON.stringify(definingJack));
-            world.setDynamicProperty(definingJackName, undefined);
-
             let states = block.permutation.getAllStates();
 
             states["bw:is_asleep"] = false;
@@ -2899,6 +2927,11 @@ system.beforeEvents.startup.subscribe(initEvent => {
             }
 
             block.setPermutation(BlockPermutation.resolve("bw:jackoward", states));
+            
+            // TEST
+            console.warn("Transform Test!")
+            blockDP.set("bw:ward_info", JSON.stringify(definingJack));
+            console.warn("Transform Test SUCCESS!!")
             // Dust Particles
             dimension.spawnParticle("bw:jack_dust_final", block.center());
             dimension.playSound("mob.evocation_illager.cast_spell", block.location);
@@ -2913,7 +2946,8 @@ system.beforeEvents.startup.subscribe(initEvent => {
           }
         }
 
-        world.setDynamicProperty(definingJackName, JSON.stringify(definingJack));
+        console.warn(JSON.stringify(definingJack))
+        blockDP.set("bw:ward_info", JSON.stringify(definingJack));
       }
     }
   });

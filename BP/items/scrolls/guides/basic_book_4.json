@@ -2,7 +2,7 @@
 	"format_version": "1.26.0",
 	"minecraft:item": {
 		"description": {
-			"identifier": "bw:basic_book_3",
+			"identifier": "bw:basic_book_4",
 			"menu_category": {
 				"category": "items"
 			}
@@ -13,9 +13,9 @@
 			"minecraft:allow_off_hand": true,
 			"minecraft:glint": false,
 			"bw:readable_book": {
-				"volume": "ceremony_book",
+				"volume": "jack_o_ward_book",
 				"default_page": "intro",
-				"key_property": "bw:book_3"
+				"key_property": "bw:book_4"
 			},
 			"minecraft:tags": {
 				"tags": [

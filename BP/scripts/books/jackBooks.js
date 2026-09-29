@@ -16,7 +16,7 @@ export const jackBook = {
                 "onClick": [
                     {
                         "type": "openForm",
-                        "form": "jacks.dusting"
+                        "form": "jack.dusting"
                     }
                 ]
             },
@@ -26,7 +26,7 @@ export const jackBook = {
                 "onClick": [
                     {
                         "type": "openForm",
-                        "form": "jacks.additions"
+                        "form": "jack.additions"
                     }
                 ]
             },
@@ -36,7 +36,7 @@ export const jackBook = {
                 "onClick": [
                     {
                         "type": "openForm",
-                        "form": "jacks.next_steps"
+                        "form": "jack.next_steps"
                     }
                 ]
             },
@@ -48,7 +48,7 @@ export const jackBook = {
         "body": [
             "The very first thing you must do is place the Infused Pumpkin. It is the base of the enchantment you are crafting and so it needs to be set down. The second step is §dpreparing§r it.",
             "",
-            "A Jack o' Ward must have two aspects before it is considered valid in the most basic sense: an §dEffect§r and a §6Trigger§r. These aspects are determined by the dusts used on the Pumpkin, and each dust carries both aspects. What determines which aspect is used is their order; §dthe first dust defines the Effect§r and §6the second dust defines the Trigger§r.",
+            "A Jack o' Ward must have two aspects before it is considered valid in the most basic sense: an §dEffect§r and a §6Trigger§r. These aspects are determined by the dusts used on the Infused Pumpkin, and each dust carries both aspects. What determines which aspect is used is their order; §dthe first dust defines the Effect§r and §6the second dust defines the Trigger§r.",
             "",
             "The Effect describes what the Jack o' Ward will do to the entities it affects, i.e. strikes a mob with lightning. The Trigger describes what causes the Jack o' Ward to activate and usually also describes how it find its potential targets i.e. activates when a mob steps on a tripwire and will only target the mobs that trigger said tripwire.",
             "",
@@ -62,7 +62,7 @@ export const jackBook = {
                 "onClick": [
                     {
                         "type": "openForm",
-                        "form": "jacks.dusting.dusts"
+                        "form": "jack.dusting.dusts"
                     }
                 ]
             },
@@ -91,7 +91,37 @@ export const jackBook = {
                 "onClick": [
                     {
                         "type": "openForm",
-                        "form": "jacks.dusting.dusts.dandelion"
+                        "form": "jack.dusting.dusts.dandelion"
+                    }
+                ]
+            },
+            {
+                "buttonName": "Blue Orchid Dust",
+                "buttonIcon": "textures/items/dusts/azure_bluet_dust",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts.blue_orchid"
+                    }
+                ]
+            },
+            {
+                "buttonName": "Cornflower Dust",
+                "buttonIcon": "textures/items/dusts/cornflower_dust",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts.cornflower"
+                    }
+                ]
+            },
+            {
+                "buttonName": "Oxeye Daisy Dust",
+                "buttonIcon": "textures/items/dusts/oxeye_daisy_dust",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts.oxeye_daisy"
                     }
                 ]
             },
@@ -107,14 +137,95 @@ export const jackBook = {
             } // Back
         ]
     },
-    "jacks.dusting.dusts.dandelion": {
+    "jack.dusting.dusts.dandelion": {
         "title": "Dandelion Dust",
         "body": [
             "§dEffect§r: Revealing",
-            "§o§r",
+            "Under this effect, the Jack o' Ward purges the affected creature of invisibility effects. Additionally, for a few seconds, particles continue to reveal their position.",
             "",
             "§6Trigger§r: Pressure Plates",
-            "§o§r",
+            "Causes the Ward to only trigger when a pressure plate is stepped on and triggered in the vicinity (default being 32 blocks in all directions). Usually, the associated Effect only targets the creature that triggered the pressure plate.",
+            "",
+            "§c[!]§r Condition Behavior: The Block Condition placed on a Ward with this Trigger checks to see if the block that is trying to trigger the Ward matches the block being used as the Condition. Exercise common sense; if the Block Condition does not point to a pressure plate of some kind, the Ward will never work.",
+            ""
+        ],
+        "buttons": [
+            {
+                "buttonName": "Back",
+                "buttonIcon": "textures/ui/book_arrowleft_default",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts"
+                    }
+                ]
+            } // Back
+        ]
+    },
+    "jack.dusting.dusts.blue_orchid": {
+        "title": "Blue Orchid Dust",
+        "body": [
+            "§dEffect§r: Transfiguration",
+            "Under this effect, the Jack o' Ward transforms the affected creature into the creature defined. There are limitations, of course. For it to work, the affected creature must have equal health or be no less than 3 hearts below the target creature's maximum health. Eg. A zombie needs to have 5 hearts of health or less before the Ward can transform it into a chicken. A chicken with 1 heart can be transformed into a wolf by this Ward Effect. §cThis does not work on players.§r",
+            "",
+            "- (REQUIRED)§r The blood of the creature being transformed into needs to be dropped on top of the Infused Pumpkin when it is being hit with this dust.",
+            "",
+            "§6Trigger§r: When Hitting",
+            "Causes the Ward to only trigger when a creature is melee attacking another creature within the vicinity (default being 32 blocks in all directions). The Effect attached affects the attacking creature.",
+            "",
+            "§c[!]§r Condition Behavior: The Item/Block Condition placed on a Ward with this Trigger checks the §dvictim's§r mainhand (if it can) instead of the attacker's.",
+            ""
+        ],
+        "buttons": [
+            {
+                "buttonName": "Back",
+                "buttonIcon": "textures/ui/book_arrowleft_default",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts"
+                    }
+                ]
+            } // Back
+        ]
+    },
+    "jack.dusting.dusts.cornflower": {
+        "title": "Cornflower Dust",
+        "body": [
+            "§dEffect§r: Strike",
+            "Under this effect, the Jack o' Ward strikes the affected entity with a bolt of lightning.",
+            "",
+            "§6Trigger§r: When Being Hit",
+            "Causes the Ward to only trigger when a creature is melee attacking another creature within the vicinity (default being 32 blocks in all directions). The Effect attached affects the victim of the attack.",
+            "",
+            "§c[!]§r Condition Behavior: The Item/Block Condition placed on a Ward with this Trigger checks the §dattacker's§r mainhand (if it can) instead of the victim's.",
+            ""
+        ],
+        "buttons": [
+            {
+                "buttonName": "Back",
+                "buttonIcon": "textures/ui/book_arrowleft_default",
+                "onClick": [
+                    {
+                        "type": "openForm",
+                        "form": "jack.dusting.dusts"
+                    }
+                ]
+            } // Back
+        ]
+    },
+    "jack.dusting.dusts.oxeye_daisy": {
+        "title": "Oxeye Daisy Dust",
+        "body": [
+            "§dEffect§r: Minor Alchemy",
+            "Under this effect, the Jack o' Ward inflicts the defined potion effect on the affected creature at a capped power of I. If the creature already has that effect, it does nothing for them.",
+            "",
+            "- (REQUIRED)§r An Attuned Clay Totem with the captured effect needs to be dropped on top of the Infused Pumpkin when it is being hit with this dust. Note that only the potion effect type and duration is considered; the power of the effect will always be locked to I.",
+            "",
+            "§6Trigger§r: Lever Pull",
+            "Causes the Ward to only trigger when a lever is pulled within the vicinity (default being 32 blocks in all directions). The Effect attached affects the creature that pulled it.",
+            "",
+            "§c[!]§r Condition Behavior: The Item/Block Condition placed on a Ward with this Trigger checks the creature that pulled the lever.",
             ""
         ],
         "buttons": [

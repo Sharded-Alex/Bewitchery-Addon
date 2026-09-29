@@ -176,9 +176,8 @@ world.afterEvents.entityHitEntity.subscribe(async (e) => {
     
     if (item != undefined && item.typeId == "bw:clay_totem") {
       let effectTotem = new ItemStack("bw:filled_clay_totem", 1);
-      let effects = entity.getEffects().filter(xe => effects.duration >= 600);
-
-      console.warn(effects.length);
+      let effects = entity.getEffects().filter(xe => xe.duration >= 600);
+      
       let chosenEffects;
       if (effects.length > 1) {
         chosenEffects = effects[Math.round(Random.Range(0, effects.length-1))];

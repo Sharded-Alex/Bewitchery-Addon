@@ -1,5 +1,5 @@
 {
-  "format_version": "1.26.0",
+  "format_version": "1.26.50",
   "minecraft:block": {
     "description": {
       "identifier": "bw:sigiled_pumpkin",
@@ -97,6 +97,9 @@
         "inactive_variant": "bw:sigiled_pumpkin",
         "fed_state": "bw:is_fed",
         "sleep_state": "bw:is_asleep"
+      },
+      "minecraft:block_entity": {
+        "dynamic_properties": true
       },
       "minecraft:movable": {
         "movement_type": "immovable"
