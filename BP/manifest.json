@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"description": "Bewitchery",
-		"name": "Bewitchery [B] 0.7.1",
+		"name": "Bewitchery [B] 0.7.11",
 		"uuid": "436c0db8-1403-4ec1-b328-0644de80f2be",
 		"version": [
 			0,
 			7,
-			1
+			11
 		],
 		"min_engine_version": [
 			1,
@@ -23,7 +23,7 @@
 			"version": [
 				0,
 				7,
-				1
+				11
 			]
 		},
 		{
@@ -44,7 +44,7 @@
 			"version": [
 				0,
 				7,
-				1
+				11
 			]
 		},
 		{
@@ -55,15 +55,5 @@
 			"module_name": "@minecraft/server",
 			"version": "2.2.0"
 		}
-	],
-	"metadata": {
-		"generated_with": {
-			"bridge": [
-				"2.7.54"
-			],
-			"dash": [
-				"0.11.7"
-			]
-		}
-	}
+	]
 }

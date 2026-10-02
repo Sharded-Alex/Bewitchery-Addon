@@ -16,6 +16,43 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+export function getWardsInRegion(dim, loc, area, type = undefined) {
+  let wardBlockArray = [];
+
+  for (let x = loc.x - area; x < loc.x + area; x++) {
+    for (let y = loc.y - area; y < loc.y + area; y++) {
+      for (let z = loc.z - area; z < loc.x + area; z++) {
+        let vec = new Vector3(x, y, z);
+        if (!dim.isChunkLoaded(vec)) {
+          continue;
+        }
+
+        let block = dim.getBlock(vec);
+        let blockProps = block.getComponent("minecraft:dynamic_properties");
+        if (!blockProps) {
+          continue;
+        }
+
+        if (blockProps.get("bw:ward_info")) {
+          if (type != undefined) {
+            let wardInfo = JSON.parse(blockProps.get("bw:ward_info"));
+            if (wardInfo.trigger == type) {
+              wardBlockArray.push(block);
+              continue;
+            }
+          } else {
+            wardBlockArray.push(block);
+            continue;
+          }
+        }
+      }
+    }
+  }
+
+  console.warn(`Wards Found: ${wardBlockArray.length}`);
+  return wardBlockArray;
+}
+
 export function isJack(block) {
   let name = `pumpkinWard:${Math.floor(block.x)}_${Math.floor(block.y)}_${Math.floor(block.z)}_${block.dimension.id}`;
   
@@ -948,63 +985,47 @@ world.afterEvents.entityHitEntity.subscribe(e => {
   }
 });
 
-// Plate Push
+// Plate Push [Updated]
 world.afterEvents.pressurePlatePush.subscribe(e => {
   let player = e.source;
+
+  if (!player?.isValid) {
+    return;
+  }
+
+  let regionalWards = getWardsInRegion(block.dimension, block.location, 32, "pressure_press");
+
+  // If the breaking block is a Ward, this makes sure it interacts with its shields.
+  if (regionalWards.length > 0) {
+    breakDownWard = true;
+  }
   
-  let wards = world.getDynamicPropertyIds().filter((e) => {
-    if (e.startsWith("pumpkinWard:")) {
-      return e;
+  // Loops through each ward of the appropriate trigger found
+  for (let wardBlock of regionalWards) {
+    let wardDP = wardBlock.getComponent("minecraft:dynamic_properties");
+    let ward = JSON.parse(wardDP.get("bw:ward_info"));
+
+    if (wardBlock.permutation.getState("bw:is_asleep")) {
+      continue;
     }
-  });
-  
-  if (player?.isValid) {
-    for (let w of wards) {
-      if (!world.getDynamicProperty(w)) {
-        continue;
-      }
-      let ward = JSON.parse(world.getDynamicProperty(w));
-      
-      try {
-        if (ward.dimension != player.dimension.id) {
+
+    if (ward.condition != undefined) {
+      if (ward.conditionType == "block") {
+        if (ward.condition != block.typeId) {
           continue;
-        }
-        if (!player.dimension.isChunkLoaded(ward.position)) {
-          continue;
-        }
-      } catch (err) {
-        continue;
-      }
-      
-      if (ward.asleep) {
-        continue;
-      }
-      if (inRange(player.location, ward.position, 32)) {
-        let eatResult = jackEat(ward, w);
-        if (eatResult) {
-          ward = eatResult;
-        } else {
-          continue;
-        }
-        
-        if (ward.trigger == "pressure_press") {
-          if (ward.condition != undefined && ward.conditionType == "block") {
-            if (ward.condition != e.block.typeId) {
-              continue;
-            }
-          }
-          if (!checkSwitch(ward.switch, player.dimension)) {
-            continue;
-          }
-          if (!essenceCheck(player, ward.filter)) {
-            continue;
-          }
-          let effectFunc = wardingDusts[ward.effect].effect;
-          
-          effectFunc(player, ward.params);
         }
       }
     }
+    
+    if (!checkSwitch(ward.switch, player.dimension)) {
+      continue;
+    }
+    if (!essenceCheck(player, ward.filter)) {
+      continue;
+    }
+    let effectFunc = wardingDusts[ward.effect].effect;
+    
+    effectFunc(player, ward.params);
   }
 });
 
@@ -1204,147 +1225,108 @@ world.afterEvents.tripWireTrip.subscribe(e => {
   }
 });
 
-// Break Block (Before)
+// Break Block (Before) [Updated]
 // Also controls Jack breaking
 world.beforeEvents.playerBreakBlock.subscribe(e => {
   let player = e.player;
   let block = e.block;
+  let blockDP = block.getComponent("minecraft:dynamic_properties");
   let tool = e.itemStack;
   let obstructed = false;
-  let wards = world.getDynamicPropertyIds().filter((e) => {
-    if (e.startsWith("pumpkinWard:")) {
-      return e;
-    }
-  });
+  let breakDownWard = false;
+  let isBlockShieldWard = false;
+
+  if (!player?.isValid) {
+    return;
+  }
   
-  if (player?.isValid) {
-    let jack;
-    for (let w of wards) {
-      if (!world.getDynamicProperty(w)) {
-        continue;
-      }
-      let ward = JSON.parse(world.getDynamicProperty(w));
-      
-      try {
-        if (ward.dimension != player.dimension.id) {
+  let regionalWards = getWardsInRegion(block.dimension, block.location, 32, "block_break");
+
+  // If the breaking block is a Ward, this makes sure it interacts with its shields.
+  if (regionalWards.length > 0) {
+    breakDownWard = true;
+  }
+  
+  // Loops through each ward of the appropriate trigger found
+  for (let wardBlock of regionalWards) {
+    let wardDP = wardBlock.getComponent("minecraft:dynamic_properties");
+    let ward = JSON.parse(wardDP.get("bw:ward_info"));
+
+    if (wardBlock.permutation.getState("bw:is_asleep")) {
+      continue;
+    }
+
+    if (ward.condition != undefined) {
+      if (ward.conditionType == "block") {
+        if (ward.condition != block.typeId) {
           continue;
         }
-        if (!player.dimension.isChunkLoaded(ward.position)) {
-          continue;
-        }
-      } catch (err) {
-        continue;
       }
-      
-      if (ward.asleep) {
-        continue;
-      }
-      if (inRange(player.location, ward.position, 32)) {
-        let eatResult = jackEat(ward, w);
-        if (eatResult) {
-          ward = eatResult;
-        } else {
+      if (ward.conditionType == "item") {
+        let equipped = player.getComponent("minecraft:equippable")?.getEquipment("Mainhand");
+        if (ward.condition != equipped?.typeId) {
           continue;
-        }
-        
-        if (ward.trigger == "block_break") {
-          if (ward.condition != undefined) {
-            if (ward.conditionType == "block") {
-              if (ward.condition != e.block.typeId) {
-                continue;
-              }
-            }
-            if (ward.conditionType == "item") {
-              let equipped = player.getComponent("minecraft:equippable")?.getEquipment("Mainhand");
-              if (ward.condition != equipped?.typeId) {
-                continue;
-              }
-            }
-          }
-          if (!checkSwitch(ward.switch, player.dimension)) {
-            continue;
-          }
-          if (!essenceCheck(player, ward.filter)) {
-            continue;
-          }
-          let effectFunc = wardingDusts[ward.effect].effect;
-          
-          let result;
-          try {
-            result = effectFunc(player, ward.params);
-          } catch (err) {
-            system.run(() => {
-              result = effectFunc(player, ward.params);
-            })
-          }
-          
-          if (result != undefined && obstructed == false) {
-            obstructed = result;
-          }
-          
-          if (w.includes(`${block.location.x}_${block.location.y}_${block.location.z}_${block.dimension.id}`)) {
-            if (ward.trigger == "block_break" && obstructed) {
-              jack = [w, ward];
-            }
-          }
         }
       }
     }
     
-    if (obstructed) {
-      e.cancel = obstructed;
+    if (!checkSwitch(ward.switch, player.dimension)) {
+      continue;
+    }
+    if (!essenceCheck(player, ward.filter)) {
+      continue;
+    }
+    let effectFunc = wardingDusts[ward.effect].effect;
+    
+    let result;
+    try {
+      result = effectFunc(player, ward.params);
+    } catch (err) {
+      system.run(() => {
+        result = effectFunc(player, ward.params);
+      })
+    }
+
+    if (result != undefined && obstructed == false) {
+      obstructed = result;
+    }
+
+    // If the block is the same as the ward block, continue and try to break down this ward.
+    if (block.x == wardBlock.x && block.y == wardBlock.y && block.z == wardBlock.z && obstructed) {
+      isBlockShieldWard = true;
+    }
+  }
+
+  e.cancel = obstructed;
+
+  
+  if (breakDownWard) {
+    if (obstructed && !isBlockShieldWard) {
+      return;
+    }
+
+    let jackShields = blockDP?.get("bw:ward_shields");
+    let enchantPow = 0;
+
+    if (tool?.getComponent("minecraft:enchantable")?.getEnchantment("sharpness")) {
+      enchantPow = tool?.getComponent("minecraft:enchantable")?.getEnchantment("sharpness").level;
     }
     
-    if (jack != undefined) {
-      let dmg = 1;
-      let breakable = true;
-      if (jack[1].encryption != undefined) {
-        let corr = getWardCorrespondence(block.dimension, block.location, false);
-        
-        if (obstructed) {
-          if (!tool?.getComponent("minecraft:enchantable")?.getEnchantment("sharpness")) {
-            breakable = false;
-          }
-        }
-        
-        if (breakable) {
-          let force = isCorrValid(jack[1].encryption, corr);
-          if (force > 0) {
-            dmg = force;
-          } else {
-            e.cancel = true;
-            return;
-          }
-        }
-      } else {
-        if (obstructed) {
-          if (!tool?.getComponent("minecraft:enchantable")?.getEnchantment("sharpness")) {
-            breakable = false;
-          }
-        }
+    system.run(() => {
+      if (jackShields != undefined) {
+        blockDP.set("bw:ward_shields", breakJackShield(jackShields, enchantPow, block.dimension, block.location));
       }
-      
-      
-      if (breakable) {
-        if (jack[1].shields > 0) {
-          e.cancel = true;
-        } else {
-          e.cancel = false;
-        }
-        system.run(() => {
-          if (jack[1]?.shields > 0) {
-            jack[1] = breakJackShield(jack[1], dmg, player.dimension);
-            // Blast a b*tch
-            jackBlastEntity(jack[1], player);
-          } else {
-            player.sendMessage(`§6[!]§r You have broken this Jack's consecrated home with some magical sharpness.`);
-            jack[1] = undefined;
-          }
-          
-          world.setDynamicProperty(jack[0], JSON.stringify(jack[1]));
-        });
+
+      if (blockDP.get("bw:ward_shields") == -1) {
+        player.sendMessage(`§6[!]§r You have broken this Jack's consecrated home with some magical sharpness.`);
+        blockDP.set("bw:ward_shields", undefined);
+        blockDP.set("bw:ward_info", undefined);
+        blockDP.set("bw:ward_owner", undefined);
+        blockDP.set("bw:ward_orbos", undefined);
+        obstructed = false;
       }
-    }
+    })
+    e.cancel = obstructed;
   }
 });
 

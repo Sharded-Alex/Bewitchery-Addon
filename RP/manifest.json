@@ -2,12 +2,12 @@
 	"format_version": 2,
 	"header": {
 		"description": "Bewitchery",
-		"name": "Bewitchery [R] 0.7.1",
+		"name": "Bewitchery [R] 0.7.11",
 		"uuid": "d34dfbc3-a2fd-440d-8c18-6d39b1ee9d81",
 		"version": [
 			0,
 			7,
-			1
+			11
 		],
 		"min_engine_version": [
 			1,
@@ -23,7 +23,7 @@
 			"version": [
 				0,
 				7,
-				1
+				11
 			]
 		}
 	],
@@ -33,18 +33,8 @@
 			"version": [
 				0,
 				7,
-				1
+				11
 			]
 		}
-	],
-	"metadata": {
-		"generated_with": {
-			"bridge": [
-				"2.7.54"
-			],
-			"dash": [
-				"0.11.7"
-			]
-		}
-	}
+	]
 }

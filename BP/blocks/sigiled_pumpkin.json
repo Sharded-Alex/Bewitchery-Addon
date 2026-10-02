@@ -105,7 +105,7 @@
         "movement_type": "immovable"
       },
       "minecraft:flammable": false,
-      "tag:minecraft:is_axe_item_destructible": {}
+      "minecraft:tags": ["minecraft:is_axe_item_destructible"]
     },
     "permutations": [
       {

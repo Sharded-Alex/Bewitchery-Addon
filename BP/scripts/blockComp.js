@@ -2305,15 +2305,15 @@ export function jackBlastEntity(jackOWard, entity) {
   dustInfo.effect(entity, jackOWard.params);
 }
 
-export function breakJackShield(jackOWard, dmg, dimension) {
-  jackOWard.shields = jackOWard.shields - dmg;
-  if (jackOWard.shields <= 0) {
-    dimension.playSound("mace.heavy_smash_ground", jackOWard.position, { pitch: 1.45, volume: 16.0 });
-    jackOWard.shields = 0;
+export function breakJackShield(shields, dmg, dimension, pos) {
+  let remShields = shields - dmg;
+  if (remShields < 0) {
+    dimension.playSound("mace.heavy_smash_ground", pos, { pitch: 1.45, volume: 16.0 });
+    remShields = -1;
   } else {
-    dimension.playSound("mace.smash_ground", jackOWard.position, { pitch: 1.45, volume: 16.0 });
+    dimension.playSound("mace.smash_ground", pos, { pitch: 1.45, volume: 16.0 });
   }
-  return jackOWard;
+  return remShields;
 }
 
 
@@ -2443,13 +2443,15 @@ function getJackBelow(block) {
   
   let newLoc = {
     x: block.location.x,
-    x: block.location.y - 1,
-    x: block.location.z
+    y: block.location.y - 1,
+    z: block.location.z
   }
   if (dim.isChunkLoaded(newLoc)) {
-    let dynProp = block.getComponent("minecraft:dynamic_properties")
-    if (dynProp.get("bw:ward_info")) {
+    let dynProp = block.getComponent("minecraft:dynamic_properties");
+    if (dynProp?.get("bw:ward_info")) {
       return JSON.parse(dynProp.get("bw:ward_info"))
+    } else {
+      return undefined;
     }
   } else {
     return;
@@ -2715,7 +2717,6 @@ system.beforeEvents.startup.subscribe(initEvent => {
         },
         "totemPos": 1,
         "dimension": dimension.id,
-        "shields": 0,
         "effect": null,
         "trigger": null
       };
@@ -2734,24 +2735,6 @@ system.beforeEvents.startup.subscribe(initEvent => {
 
       if (!blockDP.get("bw:ward_info")) {
         blockDP.set("bw:ward_info", JSON.stringify(jackObj));
-        isActivated = true;
-      }
-      
-      if (isActivated) {
-        console.warn("Activated Pumpkin");
-      }
-    },
-    onBreak: event => {
-      const block = event.block;
-      const dimension = event.dimension;
-      let blockDP = block.getComponent("minecraft:dynamic_properties");
-
-      let jackWard = blockDP.get("bw:ward_info");
-
-      if (jackWard) {
-        console.warn(jackWard);
-        console.warn("Prelim. Jack Broke");
-        // Snap Sound
       }
     },
     onPlayerInteract: event => {
@@ -2906,11 +2889,7 @@ system.beforeEvents.startup.subscribe(initEvent => {
               player.sendMessage("§6[!]§r Not enough Raw Orbos is being provided.");
               return;
             }
-            definingJack.owner = player.id;
-
-            definingJack.lastFed = world.getDay();
-            definingJack.storedOrbos = 150;
-
+            
             let states = block.permutation.getAllStates();
 
             states["bw:is_asleep"] = false;
@@ -2926,12 +2905,16 @@ system.beforeEvents.startup.subscribe(initEvent => {
               states["bw:has_filter"] = true;
             }
 
-            block.setPermutation(BlockPermutation.resolve("bw:jackoward", states));
+            let newBlock = block.setPermutation(BlockPermutation.resolve("bw:jackoward", states));
+            let newBlockDP = dimension.getBlock(block.location).getComponent('minecraft:dynamic_properties');
             
-            // TEST
-            console.warn("Transform Test!")
-            blockDP.set("bw:ward_info", JSON.stringify(definingJack));
-            console.warn("Transform Test SUCCESS!!")
+            // Save Ward Info, Orbos and Owner 
+            newBlockDP.set("bw:ward_info", JSON.stringify(definingJack));
+            newBlockDP.set("bw:ward_orbos", 150);
+            newBlockDP.set("bw:ward_owner", player.id);
+            newBlockDP.set("bw:ward_shields", 0);
+
+            console.warn(`Byte Count: ${newBlockDP.totalByteCount()}`)
             // Dust Particles
             dimension.spawnParticle("bw:jack_dust_final", block.center());
             dimension.playSound("mob.evocation_illager.cast_spell", block.location);
@@ -2946,8 +2929,11 @@ system.beforeEvents.startup.subscribe(initEvent => {
           }
         }
 
-        console.warn(JSON.stringify(definingJack))
-        blockDP.set("bw:ward_info", JSON.stringify(definingJack));
+        console.warn(JSON.stringify(definingJack));
+        if (blockDP) {
+          console.warn("Still exists")
+          blockDP.set("bw:ward_info", JSON.stringify(definingJack));
+        }
       }
     }
   });
@@ -3371,6 +3357,28 @@ system.beforeEvents.startup.subscribe(initEvent => {
       }
     }
   });
+});
+
+world.afterEvents.playerBreakBlock.subscribe((e) => {
+  let player = e.player;
+  let block = e.block;
+  let item = e.itemStack;
+
+  if (block?.getComponent("bw:warding_magick")) {
+    let blockDP = block.getComponent("minecraft:dynamic_properties");
+    if (!blockDP) {
+      return;
+    }
+    let jackInfo = blockDP.get("bw:ward_info");
+
+    if (jackInfo) {
+      jackInfo = JSON.parse(jackInfo);
+    } else {
+      return;
+    }
+
+    if ()
+  }
 });
 
 world.afterEvents.playerSpawn.subscribe((e) => {
